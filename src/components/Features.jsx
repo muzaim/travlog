@@ -7,11 +7,11 @@ import TicketIcon from "../assets/img/icons/ticket.svg";
 
 const Features = () => {
 	return (
-		<div className="py-20 px-4 grid grid-cols-12 container mx-auto">
-			<div className="col-span-12 mx-auto lg:col-span-6 lg:order-2">
-				<img src={FeatureImg} alt="" />
+		<div className="py-20 px-4 grid grid-cols-12 container mx-auto items-center">
+			<div className="col-span-12   lg:col-span-6 lg:order-2">
+				<img src={FeatureImg} alt="" className="" />
 			</div>
-			<div className="col-span-12 mt-5 lg:col-span-6 lg:order-1 lg:my-auto lg:px-4">
+			<div className="col-span-12 mt-5 lg:col-span-6 lg:order-1 lg:my-auto lg:px-4 ">
 				<div className="text-center lg:text-start">
 					<h1 className="uppercase text-[#F85E9F] font-circular text-xl">
 						key features
@@ -26,7 +26,7 @@ const Features = () => {
 					</p>
 				</div>
 				<div className="col-span-12 grid justify-items-center lg:justify-start">
-					<div className="col-span-12 py-10 px-4 lg:px-0 rounded-xl flex flex-col md:flex-row md:gap-5">
+					<div className="col-span-12 py-10 px-4 lg:px-4 rounded-xl flex flex-row gap-3  md:flex-row md:gap-5">
 						<img src={TicketIcon} alt="" className="w-24" />
 						<div className="">
 							<h1 className="text-xl my-3">
@@ -38,23 +38,21 @@ const Features = () => {
 							</p>
 						</div>
 					</div>
-					<div className="col-span-12 py-10 px-4 lg:px-0 rounded-xl flex flex-col md:flex-row md:gap-5 border shadow-lg">
+					<div className="col-span-12 py-10 px-4 lg:px-4 rounded-xl flex flex-row gap-3  md:flex-row md:gap-5 border shadow-lg">
 						<img src={ScheduleIcon} alt="" className="w-24" />
 						<div className="">
-							<h1 className="text-xl my-3">
-								We offer best location
-							</h1>
+							<h1 className="text-xl my-3">Schedule your trip</h1>
 							<p className="text-base text-gray-400 font-inter">
 								Lorem ipsum dolor sit amet consectetur
 								adipisicing elit. Assumenda, neque.
 							</p>
 						</div>
 					</div>
-					<div className="col-span-12 py-10 px-4 lg:px-0 rounded-xl flex flex-col md:flex-row md:gap-5">
+					<div className="col-span-12 py-10 px-4 lg:px-4 rounded-xl flex flex-row gap-3  md:flex-row md:gap-5">
 						<img src={LocationIcon} alt="" className="w-24" />
 						<div className="">
 							<h1 className="text-xl my-3">
-								We offer best location
+								Get documented coupons
 							</h1>
 							<p className="text-base text-gray-400 font-inter">
 								Lorem ipsum dolor sit amet consectetur

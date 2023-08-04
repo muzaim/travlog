@@ -1,6 +1,3 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 
 import Navbar from "./components/Navbar";
@@ -9,11 +6,10 @@ import Services from "./components/Services";
 import Destination from "./components/Destination";
 import Point from "./components/Point";
 import Features from "./components/Features";
-import Testimonial from "./components/Testimonial";
+import Subscribe from "./components/Subscribe";
+import Footer from "./components/Footer";
 
 function App() {
-	const [count, setCount] = useState(0);
-
 	return (
 		<>
 			<Navbar />
@@ -22,7 +18,8 @@ function App() {
 			<Destination />
 			<Point />
 			<Features />
-			<Testimonial />
+			<Subscribe />
+			<Footer />
 		</>
 	);
 }
