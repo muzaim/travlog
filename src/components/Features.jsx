@@ -5,64 +5,87 @@ import LocationIcon from "../assets/img/icons/location.svg";
 import ScheduleIcon from "../assets/img/icons/schedule.svg";
 import TicketIcon from "../assets/img/icons/ticket.svg";
 
+const features = [
+	{
+		icon: TicketIcon,
+		title: "Smart route selection",
+		copy: "Each route is shaped around scenic value, comfort, and the amount of time people realistically want to spend outside.",
+	},
+	{
+		icon: ScheduleIcon,
+		title: "Balanced trip schedules",
+		copy: "We avoid packing the day too tightly, so you still have space for rest, detours, and slower moments.",
+	},
+	{
+		icon: LocationIcon,
+		title: "Locations with atmosphere",
+		copy: "The places we recommend are chosen not just for popularity, but for how they feel when you are actually there.",
+	},
+];
+
 const Features = () => {
 	return (
-		<div className="py-20 px-4 grid grid-cols-12 container mx-auto items-center">
-			<div className="col-span-12   lg:col-span-6 lg:order-2">
-				<img src={FeatureImg} alt="" className="" />
-			</div>
-			<div className="col-span-12 mt-5 lg:col-span-6 lg:order-1 lg:my-auto lg:px-4 ">
-				<div className="text-center lg:text-start">
-					<h1 className="uppercase text-[#F85E9F] font-circular text-xl">
-						key features
-					</h1>
-					<h3 className="text-3xl font-bold font-circular my-4">
-						We offer best services
-					</h3>
-					<p className="text-base font-inter text-gray-400 px-10 lg:px-0">
-						Contrary to popular belief, Lorem Ipsum is not simply
-						random text. It has roots in a piece of classical Latin
-						literature from 45 BC.
+		<section className="section-shell py-20">
+			<div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+				<div className="order-2 lg:order-1">
+					<p className="section-label">Key Features</p>
+					<h2 className="section-title mt-4">
+						Every detail is made to keep the experience light and
+						memorable.
+					</h2>
+					<p className="mt-5 max-w-xl text-base leading-8 text-slate-600">
+						A good trip is not only about where you go. It is also
+						about pacing, comfort, and choosing details that make the
+						journey feel thoughtful from start to finish.
 					</p>
+
+					<div className="mt-8 space-y-4">
+						{features.map((feature, index) => (
+							<div
+								key={feature.title}
+								className={`rounded-[1.75rem] border p-5 sm:p-6 ${
+									index === 1
+										? "border-slate-900 bg-slate-900 text-white shadow-[0_24px_80px_-35px_rgba(15,23,42,0.7)]"
+										: "border-white/60 bg-white"
+								}`}
+							>
+								<div className="flex gap-4">
+									<img
+										src={feature.icon}
+										alt=""
+										className="h-16 w-16 shrink-0"
+									/>
+									<div>
+										<h3 className="font-circular text-2xl">
+											{feature.title}
+										</h3>
+										<p
+											className={`mt-3 text-sm leading-7 ${
+												index === 1
+													? "text-white/75"
+													: "text-slate-600"
+											}`}
+										>
+											{feature.copy}
+										</p>
+									</div>
+								</div>
+							</div>
+						))}
+					</div>
 				</div>
-				<div className="col-span-12 grid justify-items-center lg:justify-start">
-					<div className="col-span-12 py-10 px-4 lg:px-4 rounded-xl flex flex-row gap-3  md:flex-row md:gap-5">
-						<img src={TicketIcon} alt="" className="w-24" />
-						<div className="">
-							<h1 className="text-xl my-3">
-								We offer best location
-							</h1>
-							<p className="text-base text-gray-400 font-inter">
-								Lorem ipsum dolor sit amet consectetur
-								adipisicing elit. Assumenda, neque.
-							</p>
-						</div>
-					</div>
-					<div className="col-span-12 py-10 px-4 lg:px-4 rounded-xl flex flex-row gap-3  md:flex-row md:gap-5 border shadow-lg">
-						<img src={ScheduleIcon} alt="" className="w-24" />
-						<div className="">
-							<h1 className="text-xl my-3">Schedule your trip</h1>
-							<p className="text-base text-gray-400 font-inter">
-								Lorem ipsum dolor sit amet consectetur
-								adipisicing elit. Assumenda, neque.
-							</p>
-						</div>
-					</div>
-					<div className="col-span-12 py-10 px-4 lg:px-4 rounded-xl flex flex-row gap-3  md:flex-row md:gap-5">
-						<img src={LocationIcon} alt="" className="w-24" />
-						<div className="">
-							<h1 className="text-xl my-3">
-								Get documented coupons
-							</h1>
-							<p className="text-base text-gray-400 font-inter">
-								Lorem ipsum dolor sit amet consectetur
-								adipisicing elit. Assumenda, neque.
-							</p>
-						</div>
+
+				<div className="order-1 lg:order-2">
+					<div className="glass-panel overflow-hidden p-4 sm:p-6">
+						<img
+							src={FeatureImg}
+							alt="Feature illustration"
+							className="mx-auto w-full max-w-2xl"
+						/>
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 

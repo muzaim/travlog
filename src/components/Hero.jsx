@@ -9,52 +9,106 @@ import U3 from "../assets/img/use/u3.svg";
 import U4 from "../assets/img/use/u4.svg";
 import U5 from "../assets/img/use/u5.svg";
 
+const brands = [U1, U2, U3, U4, U5];
+
 const Hero = () => {
 	return (
-		<>
-			<div className="container mx-auto py-5 px-4 md:px-0">
-				<div className="grid grid-cols-12">
-					<div className="col-span-12 lg:col-span-8 lg:order-2">
-						<img src={HeroImg} alt="" className="mx-auto" />
+		<section id="home" className="section-shell pb-10 pt-12 md:pt-16">
+			<div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+				<div>
+					<div className="inline-flex items-center gap-3 rounded-full border border-rose-100 bg-white px-5 py-3 shadow-sm">
+						<span className="font-circular text-sm text-rose-500">
+							Explore the world
+						</span>
+						<img src={Tas} alt="" className="h-5 w-5" />
 					</div>
-					<div className="col-span-12 lg:col-span-4 lg:order-1  lg:my-auto">
-						<button className="py-4 px-8 shadow-lg flex items-center gap-3 rounded-full mx-auto lg:mx-0">
-							<h1 className="text-[#F85E9F]">
-								Explore the world
-							</h1>
-							<img src={Tas} alt="" />
+
+					<h1 className="mt-6 max-w-2xl text-5xl leading-[1.05] text-slate-900 md:text-6xl lg:text-7xl">
+						Find calm, beautiful trips that still feel full of
+						story.
+					</h1>
+					<p className="mt-6 max-w-xl text-base leading-8 text-slate-600 md:text-lg">
+						Savana helps you discover destinations that feel fresh,
+						warm, and easy to enjoy. Clean planning, scenic stays,
+						and memorable moments without overcomplicating the
+						journey.
+					</p>
+
+					<div className="mt-8 flex flex-col gap-4 sm:flex-row">
+						<button className="rounded-full bg-rose-500 px-8 py-4 font-semibold text-white shadow-[0_20px_50px_-20px_rgba(244,63,94,0.7)] transition hover:bg-rose-400">
+							Start Exploring
 						</button>
-						<h1 className="text-6xl text-center font-circular my-5 md:my-10 md:text-7xl lg:text-start">
-							Travel{" "}
-							<span className="text-[#F85E9F]">
-								top destination
-							</span>{" "}
-							of the world
-						</h1>
-						<p className="text-gray-400 text-center font-inter text-base px-20 md:px-48 md:my-10 md:text-lg my-5 lg:text-start lg:p-0">
-							We always make our customer happy by providing as
-							many choices as possible{" "}
+						<button className="flex items-center justify-center gap-3 rounded-full border border-slate-200 bg-white px-8 py-4 font-semibold text-slate-700 transition hover:border-slate-300 hover:text-slate-900">
+							<img src={Play} alt="" className="h-5 w-5" />
+							Watch Journey
+						</button>
+					</div>
+
+					<div className="mt-10 flex flex-col gap-5 sm:flex-row sm:items-center">
+						<div className="flex -space-x-3">
+							{["MA", "IR", "LN"].map((initial) => (
+								<div
+									key={initial}
+									className="flex h-11 w-11 items-center justify-center rounded-full border-4 border-white bg-amber-200 font-semibold text-slate-700"
+								>
+									{initial}
+								</div>
+							))}
+						</div>
+						<p className="max-w-sm text-sm leading-7 text-slate-500">
+							Trusted by travelers who want a cleaner, simpler,
+							and more tasteful holiday experience.
 						</p>
-						<div className="flex flex-col sm:flex-row  sm:justify-center gap-4 lg:justify-start">
-							<button className="py-6 px-8 bg-purple-600 text-white font-circular text-base rounded-full">
-								Get Started
-							</button>
-							<button className="flex items-center justify-center gap-2 font-circular text-base py-6 px-8 rounded-full shadow-lg">
-								<img src={Play} alt="" />
-								Watch Demo
-							</button>
+					</div>
+				</div>
+
+				<div className="relative">
+					<div className="absolute left-4 top-10 h-32 w-32 rounded-full bg-amber-200/50 blur-3xl" />
+					<div className="absolute bottom-6 right-0 h-40 w-40 rounded-full bg-rose-200/60 blur-3xl" />
+					<div className="glass-panel relative overflow-hidden p-5 sm:p-7">
+						<img
+							src={HeroImg}
+							alt="Travel illustration"
+							className="mx-auto w-full max-w-xl"
+						/>
+						<div className="mt-6 grid gap-4 sm:grid-cols-2">
+							<div className="rounded-[1.5rem] bg-slate-900 p-5 text-white">
+								<p className="text-sm uppercase tracking-[0.3em] text-white/60">
+									Best season
+								</p>
+								<p className="mt-3 font-circular text-2xl">
+									April to August
+								</p>
+							</div>
+							<div className="rounded-[1.5rem] bg-amber-50 p-5">
+								<p className="text-sm uppercase tracking-[0.3em] text-amber-700">
+									Most loved route
+								</p>
+								<p className="mt-3 font-circular text-2xl text-slate-900">
+									Coast, hill, and café loop
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div className="px-4 my-5 flex justify-center flex-wrap gap-5 lg:gap-20">
-				<img src={U1} alt="" className="h-8 lg:h-10" />
-				<img src={U2} alt="" className="h-8 lg:h-10" />
-				<img src={U3} alt="" className="h-8 lg:h-10" />
-				<img src={U4} alt="" className="h-8 lg:h-10" />
-				<img src={U5} alt="" className="h-8 lg:h-10" />
+
+			<div className="mt-14 rounded-[2rem] border border-white/60 bg-white/70 px-5 py-6 shadow-[0_24px_80px_-40px_rgba(15,23,42,0.35)] backdrop-blur">
+				<p className="text-center text-xs font-semibold uppercase tracking-[0.45em] text-slate-400">
+					Chosen by modern travel brands
+				</p>
+				<div className="mt-6 flex flex-wrap items-center justify-center gap-8 opacity-75 md:gap-12">
+					{brands.map((brand, index) => (
+						<img
+							key={index}
+							src={brand}
+							alt=""
+							className="h-7 lg:h-9"
+						/>
+					))}
+				</div>
 			</div>
-		</>
+		</section>
 	);
 };
 

@@ -4,66 +4,72 @@ import DestinationImg from "../assets/img/icons/destination.svg";
 import WeatherImg from "../assets/img/icons/weather.svg";
 import BookingImg from "../assets/img/icons/booking.svg";
 
+const services = [
+	{
+		icon: DestinationImg,
+		title: "Curated destinations",
+		copy: "Scenic places that feel fresh, photogenic, and still comfortable for a laid-back holiday rhythm.",
+	},
+	{
+		icon: WeatherImg,
+		title: "Season-aware planning",
+		copy: "We match routes with weather windows so your beach day, city walk, and sunset stop land at the right time.",
+	},
+	{
+		icon: BookingImg,
+		title: "Smooth booking flow",
+		copy: "Transport, stay, and experience details are grouped in one neat plan so the trip stays easy to follow.",
+	},
+];
+
 const Services = () => {
 	return (
-		<div className="container mx-auto my-10 px-4 lg:px-0">
-			<div className="grid grid-cols-12">
-				<div className="col-span-12 xl:col-span-4 my-auto">
-					<div className="text-center lg:text-center flex flex-col gap-3 xl:text-start">
-						<p className="text-[#F85E9F] font-circular text-2xl lg:text-4xl">
-							Services
-						</p>
-						<h1 className="font-circular text-4xl pr-4">
-							Our top value categories for you
-						</h1>
-					</div>
+		<section id="services" className="section-shell py-20">
+			<div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+				<div>
+					<p className="section-label">Services</p>
+					<h2 className="section-title mt-4">
+						Simple tools for a trip that looks good and feels easy.
+					</h2>
+					<p className="mt-5 max-w-md text-base leading-8 text-slate-600">
+						The goal is not to make travel complicated. We only keep
+						the parts that help you move smoothly and enjoy more of
+						the destination.
+					</p>
 				</div>
-				<div className="col-span-12 lg:col-span-12  xl:col-span-8 mt-5">
-					<div className="flex flex-col lg:flex-row items-center gap-5">
-						<div className="w-[20rem] py-16 px-20 text-center rounded-lg shadow-lg">
+
+				<div className="grid gap-5 md:grid-cols-3">
+					{services.map((service, index) => (
+						<article
+							key={service.title}
+							className={`soft-card p-7 ${
+								index === 1 ? "bg-slate-900 text-white" : ""
+							}`}
+						>
 							<img
-								src={DestinationImg}
+								src={service.icon}
 								alt=""
-								className="mx-auto"
+								className="h-20 w-20"
 							/>
-							<div>
-								<h1 className="font-circular text-2xl my-5">
-									Best Tour Guide
-								</h1>
-								<p className="font-inter text-gray-400">
-									What looked like a small patch of purple
-									grass, above five feet.
-								</p>
-							</div>
-						</div>
-						<div className="w-[20rem] py-16 px-20 text-center rounded-lg shadow-lg">
-							<img src={WeatherImg} alt="" className="mx-auto" />
-							<div>
-								<h1 className="font-circular text-2xl my-5">
-									Best Tour Guide
-								</h1>
-								<p className="font-inter text-gray-400">
-									What looked like a small patch of purple
-									grass, above five feet.
-								</p>
-							</div>
-						</div>
-						<div className="w-[20rem] py-16 px-20 text-center rounded-lg shadow-lg">
-							<img src={BookingImg} alt="" className="mx-auto" />
-							<div>
-								<h1 className="font-circular text-2xl my-5">
-									Best Tour Guide
-								</h1>
-								<p className="font-inter text-gray-400">
-									What looked like a small patch of purple
-									grass, above five feet.
-								</p>
-							</div>
-						</div>
-					</div>
+							<h3
+								className={`mt-8 font-circular text-2xl ${
+									index === 1 ? "text-white" : "text-slate-900"
+								}`}
+							>
+								{service.title}
+							</h3>
+							<p
+								className={`mt-4 text-sm leading-7 ${
+									index === 1 ? "text-white/75" : "text-slate-600"
+								}`}
+							>
+								{service.copy}
+							</p>
+						</article>
+					))}
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 

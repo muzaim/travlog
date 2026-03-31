@@ -4,81 +4,88 @@ import IkanImg from "../assets/img/use/ikan.svg";
 import GunungImg from "../assets/img/use/gunung.svg";
 import PantaiImg from "../assets/img/use/pantai.svg";
 
+const destinations = [
+	{
+		image: IkanImg,
+		price: "From $550",
+		title: "Paradise Beach Escape",
+		location: "Bantayan Island",
+		rating: "4.8",
+		copy: "Soft sand, warm light, and a relaxed route that keeps the mood effortless.",
+	},
+	{
+		image: GunungImg,
+		price: "From $820",
+		title: "Mountain Air Retreat",
+		location: "Highland Getaway",
+		rating: "4.9",
+		copy: "A cool-climate stay with scenic mornings, café stops, and easy exploration.",
+	},
+	{
+		image: PantaiImg,
+		price: "From $320",
+		title: "Ubud & Coast Weekend",
+		location: "Bali, Indonesia",
+		rating: "4.7",
+		copy: "A balanced mix of nature, local food, and calm corners for slow travelers.",
+	},
+];
+
 const Destination = () => {
 	return (
-		<div className="container mx-auto my-5">
-			<div className="grid grid-cols-12 my-5">
-				<div className="col-span-12 lg:col-span-4 text-center lg:text-start">
-					<h1 className="text-[#F85E9F] font-circular text-lg lg:text-2xl">
-						Top Destination
-					</h1>
-					<p className="text-xl font-circular font-bold lg:text-3xl">
-						Explore Top Destination
-					</p>
+		<section id="destinations" className="section-shell py-20">
+			<div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+				<div>
+					<p className="section-label">Top Destination</p>
+					<h2 className="section-title mt-4">
+						Beautiful places with a softer, more stylish pace.
+					</h2>
 				</div>
-				<div className="col-span-12 lg:col-span-8 px-4 my-3 w-full flex justify-between lg:justify-end lg:gap-5">
-					<button className="px-5 py-4 rounded-full border">
-						{"<-"}
-					</button>
-					<button className="px-5 py-4 rounded-full bg-purple-500 text-white">
-						{"->"}
-					</button>
-				</div>
+				<p className="max-w-md text-base leading-8 text-slate-600">
+					These routes are built for people who want scenic moments,
+					good stays, and enough breathing room to actually enjoy the
+					trip.
+				</p>
 			</div>
-			<div className="grid grid-cols-12 px-4 gap-5 justify-items-center">
-				<div className="col-span-12 lg:col-span-4 w-[20rem] shadow-lg rounded-xl">
-					<img src={IkanImg} alt="" className="overflow-hidden" />
-					<div className="py-3 px-8">
-						<h3 className="text-lg text-[#F85E9F] font-circular">
-							$550.16
-						</h3>
-						<h1 className="text-xl font-circular mt-1">
-							Paradise Beach, Bantayan Island
-						</h1>
-						<p className="text-lg text-gray-400 font-inter my-3 font-thin">
-							Rome, Italy
-						</p>
-						<span className="text-lg text-orange-400 font-bold">
-							4.8⭐
-						</span>
-					</div>
-				</div>
-				<div className="col-span-12 lg:col-span-4 w-[20rem] shadow-lg rounded-xl">
-					<img src={GunungImg} alt="" className="overflow-hidden" />
-					<div className="py-3 px-8">
-						<h3 className="text-lg text-[#F85E9F] font-circular">
-							$829.56
-						</h3>
-						<h1 className="text-xl font-circular mt-1">
-							Penang Malaysia, Bantul Island
-						</h1>
-						<p className="text-lg text-gray-400 font-inter my-3 font-thin">
-							Yogyakarta, Italy
-						</p>
-						<span className="text-lg text-orange-400 font-bold">
-							4.9⭐
-						</span>
-					</div>
-				</div>
-				<div className="col-span-12 lg:col-span-4 w-[20rem] shadow-lg rounded-xl">
-					<img src={PantaiImg} alt="" className="overflow-hidden" />
-					<div className="py-3 px-8">
-						<h3 className="text-lg text-[#F85E9F] font-circular">
-							$320.39
-						</h3>
-						<h1 className="text-xl font-circular mt-1">
-							Ubud, Indonesia
-						</h1>
-						<p className="text-lg text-gray-400 font-inter my-3 font-thin">
-							Bali, Italy
-						</p>
-						<span className="text-lg text-orange-400 font-bold">
-							4.7⭐
-						</span>
-					</div>
-				</div>
+
+			<div className="mt-12 grid gap-6 lg:grid-cols-3">
+				{destinations.map((destination) => (
+					<article
+						key={destination.title}
+						className="overflow-hidden rounded-[2rem] border border-white/60 bg-white shadow-[0_24px_80px_-35px_rgba(15,23,42,0.32)]"
+					>
+						<div className="overflow-hidden bg-amber-50">
+							<img
+								src={destination.image}
+								alt={destination.title}
+								className="h-72 w-full object-cover transition duration-500 hover:scale-105"
+							/>
+						</div>
+						<div className="p-7">
+							<div className="flex items-start justify-between gap-4">
+								<div>
+									<p className="text-sm font-semibold uppercase tracking-[0.3em] text-rose-400">
+										{destination.price}
+									</p>
+									<h3 className="mt-3 font-circular text-2xl text-slate-900">
+										{destination.title}
+									</h3>
+								</div>
+								<span className="rounded-full bg-amber-100 px-3 py-2 text-sm font-semibold text-amber-700">
+									{destination.rating}★
+								</span>
+							</div>
+							<p className="mt-4 text-sm font-medium uppercase tracking-[0.2em] text-slate-400">
+								{destination.location}
+							</p>
+							<p className="mt-4 text-sm leading-7 text-slate-600">
+								{destination.copy}
+							</p>
+						</div>
+					</article>
+				))}
 			</div>
-		</div>
+		</section>
 	);
 };
 
