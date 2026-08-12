@@ -1,5 +1,3 @@
-import React from "react";
-
 import IkanImg from "../assets/img/use/ikan.svg";
 import GunungImg from "../assets/img/use/gunung.svg";
 import PantaiImg from "../assets/img/use/pantai.svg";

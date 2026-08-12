@@ -1,5 +1,3 @@
-import React from "react";
-
 import DestinationImg from "../assets/img/icons/destination.svg";
 import WeatherImg from "../assets/img/icons/weather.svg";
 import BookingImg from "../assets/img/icons/booking.svg";

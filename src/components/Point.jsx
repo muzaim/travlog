@@ -1,5 +1,3 @@
-import React from "react";
-
 import TravelImg from "../assets/img/use/travel.svg";
 
 const stats = [

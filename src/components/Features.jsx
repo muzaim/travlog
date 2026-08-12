@@ -1,5 +1,3 @@
-import React from "react";
-
 import FeatureImg from "../assets/img/use/features.svg";
 import LocationIcon from "../assets/img/icons/location.svg";
 import ScheduleIcon from "../assets/img/icons/schedule.svg";

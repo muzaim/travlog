@@ -1,5 +1,3 @@
-import React from "react";
-
 const Subscribe = () => {
 	return (
 		<section className="section-shell py-20">

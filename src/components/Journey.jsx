@@ -1,5 +1,3 @@
-import React from "react";
-
 const plans = [
 	{
 		day: "Day 1",

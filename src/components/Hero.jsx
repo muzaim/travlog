@@ -1,5 +1,3 @@
-import React from "react";
-
 import HeroImg from "../assets/img/use/hero.svg";
 import Tas from "../assets/img/icons/tas.svg";
 import Play from "../assets/img/icons/play.svg";

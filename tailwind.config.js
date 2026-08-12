@@ -4,8 +4,10 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				inter: ["inter"],
-				circular: ["Circular STD"],
+				inter: ["'Plus Jakarta Sans'", "sans-serif"],
+				circular: ["Outfit", "sans-serif"],
+				outfit: ["Outfit", "sans-serif"],
+				jakarta: ["'Plus Jakarta Sans'", "sans-serif"],
 			},
 		},
 	},
